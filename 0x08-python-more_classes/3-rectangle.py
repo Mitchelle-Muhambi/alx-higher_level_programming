@@ -4,15 +4,12 @@
 
 class Rectangle:
     """
-    Class that defines properties of rectangle by: (based on 5-rectangle.py).
+    Class that defines properties of rectangle by: (based on 2-rectangle.py).
 
     Attributes:
         width (int): width of the rectangle.
         height (int): height of the rectangle.
     """
-
-    number_of_instances = 0
-
     def __init__(self, width=0, height=0):
         """Creates new instances of Rectangle.
 
@@ -22,7 +19,6 @@ class Rectangle:
         """
         self.height = height
         self.width = width
-        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -117,17 +113,3 @@ class Rectangle:
         rectangle.pop()
 
         return "".join(rectangle)
-
-    def __repr__(self):
-        """Returns a string representation of the rectangle.
-
-        Returns:
-            str: the rectangle representation.
-        """
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-
-    def __del__(self):
-        """Deletes an instance of a class
-        """
-        print("{:s}".format("Bye rectangle..."))
-        type(self).number_of_instances -= 1
